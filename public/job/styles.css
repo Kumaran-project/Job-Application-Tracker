@@ -1,0 +1,201 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.page {
+  display: flex;
+  height: 100vh;
+}
+
+.side-bar {
+  width: 200px;
+  background-color: cadetblue;
+  padding: 20px;
+}
+
+.side-bar ul {
+  list-style-type: none;  /* Removes the default list markers */
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for each list item */
+.side-bar li {
+  margin-bottom: 10px; /* Space between items */
+}
+
+/* Styling for the anchor tags (links) */
+.nav-link {
+  display: block;
+  padding: 10px;
+  color:  white;;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  background-color: #007BFF;  /* Highlight on hover */
+}
+
+.nav-link.job{
+  background-color: #007BFF;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.status {
+  background-color: #e0e0e0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.job-search {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.job-search input {
+  padding: 8px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.job-search button {
+  padding: 10px 20px;
+  background-color: cadetblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.job-search button:hover {
+  background-color: #5e9ea0;
+}
+
+.job-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.job-table th, .job-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.job-table th {
+  background-color: cadetblue;
+  color: white;
+}
+
+.job-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.job-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.action-btn {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: cadetblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  background-color: #5e9ea0;
+}
+
+.action-btn.edit {
+  background-color: #007bff;
+}
+
+.action-btn.delete {
+  background-color: #e74c3c;
+}
+
+.action-btn.edit:hover {
+  background-color: #0056b3;
+}
+
+.action-btn.delete:hover {
+  background-color: #c0392b;
+}
+
+
+#jobFormContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 2px solid #ccc;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  z-index: 1000;
+  max-height: 80vh; /* Limit the height to 80% of the viewport */
+  overflow: auto; /* Enable scrolling for overflow content */
+}
+
+#jobFormContainer.hidden {
+  display: none;
+}
+
+#jobForm input,
+#jobForm textarea,
+#jobForm select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#jobForm button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: cadetblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#jobForm button:hover {
+  background-color: #5e9ea0;
+}
+
+
+#jobDetailContainer {
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
+
+#jobDetailContainer.visible {
+  display: block;
+}

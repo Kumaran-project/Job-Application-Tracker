@@ -1,10 +1,9 @@
 const Sequelize = require("sequelize");
 const bcrypt = require("bcrypt");
-// const path=require("path");
 const jwt=require("jsonwebtoken");
-const user = require("../models/user");
+const user = require("../models/userModel");
 
-
+require("dotenv").config(); 
 
 module.exports.postUser = async (req, res) => {
   const { userName, password, email } = req.body;
@@ -20,24 +19,28 @@ module.exports.postUser = async (req, res) => {
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 };
-function generateToken(id,name,IsPremiumUser){
-return jwt.sign({id,name,IsPremiumUser},process.env.TOKEN_SECRET,{expiresIn:"1h"});
+
+
+function generateToken(id){
+return jwt.sign({id},process.env.TOKEN_SECRET,{expiresIn:"1h"});
 }
 
 
 
 module.exports.loginUser = async (req, res) => {
-  const { email, password } = req.body;
+  
   try {
+    const { email, password } = req.body;
+    console.log(req.body);
     const existingUser = await user.findOne({ where: { email: email } });
     if (!existingUser) {
       return res.status(404).json({ success: false, message: "404, No user found" });
     } 
-      bcrypt.compare(password, existingUser.password).then((result) => {
-        if (result===true) {
+      const isMatch=await bcrypt.compare(password, existingUser.password)
+        if (isMatch) {
          console.log(existingUser)
           res
-            .status(200).json({success:true,redirectUrl:"http://localhost:3000/index.html",token:generateToken(existingUser.id,existingUser.userName,existingUser.IsPremiumUser)});
+            .status(200).json({success:true,redirectUrl:"http://localhost:3000/index.html",token:generateToken(existingUser.id)});
             
         } else {
 
@@ -48,7 +51,7 @@ module.exports.loginUser = async (req, res) => {
               message: "Authentication failed, Invalid password",
             });
         }
-      });
+     
     }
    catch (error) {
     console.log(error);

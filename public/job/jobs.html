@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="side-bar">
+        <ul>
+          <li><a href="../profile/profile.html" id="profileLink" class="nav-link">Manage Profile</a></li>
+          <li><a href="../job/jobs.html" id="jobsLink" class="nav-link">Job Tracker</a></li>
+          <li><a href="../company/company.html" id="companyLink" class="nav-link company">Company Tracker</a></li>
+        </ul>
+      </div>      
+      <div class="main">
+        <div class="dashboard">
+          <div class="status">
+            <h3>Bookmarked</h3>
+          </div>
+          <div class="status">
+            <h3>Applied</h3>
+          </div>
+          <div class="status">
+            <h3>Interviewed</h3>
+          </div>
+          <div class="status">
+            <h3>Rejected</h3>
+          </div>
+          <div class="status">
+            <h3>Accepted</h3>
+          </div>
+        </div>
+
+        <div id="jobDetailContainer" class="hidden">
+          <div id="jobDetailContent"></div>
+        </div>
+        
+        <div id="jobFormContainer" class="hidden">
+          <form id="jobForm">
+            <h2>Add Job</h2>
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" name="company" required />
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle" name="jobTitle" required />
+
+            <label for="jobDescription">Job Description:</label>
+            <textarea id="jobDescription" name="jobDescription" rows="4" required></textarea>
+
+            <label for="jobType">Job Type:</label>
+            <select id="jobType" name="jobType" required>
+              <option value="full-time">Full-Time</option>
+              <option value="part-time">Part-Time</option>
+              <option value="freelance">Freelance</option>
+            </select>
+            <label for="jobSalary">Salary:</label>
+            <input type="text" id="jobSalary" name="jobSalary" required />
+
+            <label for="jobStatus">Status:</label>
+            <select id="jobStatus" name="jobStatus" required>
+              <option value="Pending">Pending</option>
+              <option value="Applied">Applied</option>
+              <option value="Interviewed">Interviewed</option>
+              <option value="Rejected">Rejected</option>
+              <option value="Accepted">Accepted</option>
+            </select><br><br>
+
+            <label for="AppliedDate">Applied date:</label>
+            <input type="text" id="AppliedDate" name="appliedDate" required />
+
+            <label for="Follow-up">Follow up:</label>
+            <input type="text" id="Follow-up" name="followUp" required />
+
+            <label for="jobLocation">Location:</label>
+            <input type="text" id="jobLocation" name="jobLocation" required />
+            <label for="resume">Resume (PDF or DOC):</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+          
+            <label for="coverLetter">Cover Letter (PDF or DOC):</label>
+            <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" required />
+          
+            <button type="submit">Submit</button>
+            <button type="button" id="cancelBtn">Cancel</button>
+          </form>
+        </div>
+        <div class="job-search">
+          <div>
+            <label for="search">Search:</label>
+            <input type="text" name="search" id="search" />
+          </div>
+          <div>
+            <button id="addJobBtn">Add New Job</button>
+          </div>
+        </div>
+        <div class="job-tracker">
+          <table id="jobTable" class="job-table">
+            <thead>
+              <tr>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Salary</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Date Applied</th>
+                <th>Follow-Up</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="jobTableBody">
+              <!-- Dynamic rows will be added here -->
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js" integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="job.js"></script>
+  </body>
+</html>

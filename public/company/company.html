@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Tracker</title>
+  <link rel="stylesheet" href="company.css">
+</head>
+<body>
+  <div class="page">
+    <!-- Sidebar -->
+    <div class="side-bar">
+      <ul>
+        <li><a href="../profile/profile.html" id="profileLink" class="nav-link">Manage Profile</a></li>
+        <li><a href="../job/jobs.html" id="jobsLink" class="nav-link">Job Tracker</a></li>
+        <li><a href="../company/company.html" id="companyLink" class="nav-link company">Company Tracker</a></li>
+      </ul>
+    </div>  
+
+    <!-- Main Content -->
+    <div class="main">
+      <div class="job-search">
+        <div>
+          <label for="search">Search:</label>
+          <input type="text" name="search" id="search" placeholder="Search companies..." />
+        </div>
+        <div>
+          <button id="addCompanyBtn">Add New Company</button>
+        </div>
+      </div>
+      <table id="companyTable" class="company-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Industry</th>
+            <th>Location</th>
+            <th>Size</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data will be dynamically added here -->
+        </tbody>
+      </table>
+
+      <!-- Add/Edit Company Form -->
+      <div id="companyFormContainer" class="hidden">
+        <form id="companyForm">
+          <h2>Add/Edit Company</h2>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="industry">Industry:</label>
+          <select id="industry" name="industry" required>
+            <option value="">Select an industry</option>
+            <option value="Technology">Technology</option>
+            <option value="Finance">Finance</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Aviation">Aviation</option>
+          </select>
+
+          <label for="size">Company Size:</label>
+          <select id="size" name="size" required>
+            <option value="">Select a company size</option>
+            <option value="0-10">0-10 Employees</option>
+            <option value="11-50">11-50 Employees</option>
+            <option value="51-200">51-200 Employees</option>
+          </select>
+
+          <label for="type">Company Type:</label>
+          <select id="type" name="type" required>
+            <option value="">Select a company type</option>
+            <option value="Private">Private</option>
+            <option value="Public">Public</option>
+            <option value="Self-Employed">Self-Employed</option>
+          </select>
+
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" required>
+
+          <label for="website">Website:</label>
+          <input type="url" id="website" name="website">
+
+          <label for="linkedin">LinkedIn:</label>
+          <input type="url" id="linkedin" name="linkedin">
+
+          <label for="founded">Year Founded:</label>
+          <input type="number" id="founded" name="founded">
+
+          <button type="submit">Save Company</button>
+          <button type="button" id="cancelBtn">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js" crossorigin="anonymous"></script>
+  <script src="company.js"></script>
+</body>
+</html>

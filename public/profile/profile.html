@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Management</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+           
+            <ul>
+                <li><a href="../profile/profile.html">Profile</a></li>
+                <li><a href="../company/company.html">Company</a></li>
+                <li><a href="../job/jobs.html">Job Tracker</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="profile-page">
+            <div class="profile-container">
+                <h2>Manage Profile</h2>
+                <form id="profileForm">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="name" placeholder="Enter your full name" required>
+
+                    <label for="college">College</label>
+                    <input type="text" id="college" name="college" placeholder="Enter your College" required>
+
+                    <label for="degree">Degree</label>
+                    <input type="text" id="degree" name="degree" placeholder="Enter your Degree" required>
+
+                    <label for="occupation">Occupation</label>
+                    <input type="text" id="occupation" name="occupation" placeholder="Enter your occupation" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                    <label for="url">LinkedIn:</label>
+                    <input type="url" id="url" name="linkedin" placeholder="Enter your LinkedIn URL" required>
+
+                    <label for="careerGoals">Career Goals:</label>
+                    <textarea id="careerGoals" name="careerGoals" rows="4" placeholder="Describe your career goals"></textarea>
+                   
+                    <button type="submit">Save Profile</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="profileDetails" class="hidden">
+        <h3>Profile Details</h3>
+        <p><strong>Full Name:</strong> <span id="displayFullName"></span></p>
+        <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+        <p><strong>LinkedIn:</strong> <span id="displayPhone"></span></p>
+        <p><strong>Career Goals:</strong> <span id="displayCareerGoals"></span></p>
+        <button id="editProfileBtn">Edit Profile</button>
+      </div>
+      
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js" integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

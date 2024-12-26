@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.whatsapp-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 25%;
+  background-color: #075E54;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-btn {
+  background-color: #25D366;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.channels {
+  padding: 20px;
+}
+
+.channels ul {
+  list-style: none;
+  padding: 0;
+}
+
+.channels li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.channels li i {
+  margin-right: 10px;
+}
+
+.chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background-color: #075E54;
+  color: white;
+  padding: 20px;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #ECE5DD;
+}
+
+.message {
+  margin-bottom: 15px;
+}
+
+.message .meta {
+  font-weight: bold;
+}
+
+.chat-form-container {
+  background-color: white;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.chat-form-container form {
+  display: flex;
+}
+
+.chat-form-container input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chat-form-container button {
+  background-color: #25D366;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin-left: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
